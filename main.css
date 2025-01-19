@@ -7,9 +7,9 @@ html, body {
     --logo-size: 60px;
     --body-margin: calc(var(--header-margin) * 2 + var(--logo-size));
 
-    --bigfontsize: 5vh;
-    --giantfontsize: 15vh;
-    --normalfontsize: 1.8vh;
+    --bigfontsize: 40pt;
+    --giantfontsize: 104pt;
+    --normalfontsize: 14pt;
     
     font-family: 'Inter', sans-serif;
     font-size: var(--normalfontsize);
@@ -37,6 +37,8 @@ a, a:visited {
     padding-left: var(--header-margin);
     
     background-color: var(--almostblack);
+    
+    user-select: none;
 }
 
 .header a:not(:first-child) {
@@ -69,6 +71,7 @@ a, a:visited {
 .content {
     margin-top: 30vh;
     padding-left: var(--body-margin);
+    padding-right: var(--body-margin);
 }
 
 .content h1 {
@@ -96,4 +99,10 @@ a, a:visited {
 
 ::selection {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* External link icon */
+a[target="_blank"]::after {
+    content: url('../img/ext.png');
+    margin: 0 3px 0 5px;   
 }
