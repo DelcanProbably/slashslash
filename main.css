@@ -84,6 +84,9 @@ a, a:visited {
     display: flex;
     width: 100vw;
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .landing .left, .landing .right{
