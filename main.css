@@ -7,9 +7,10 @@ html, body {
     --logo-size: 60px;
     --body-margin: calc(var(--header-margin) * 2 + var(--logo-size));
 
-    --bigfontsize: 40pt;
-    --giantfontsize: 104pt;
     --normalfontsize: 14pt;
+    --bigishfontsize: 1.67vw;
+    --bigfontsize: 2.78vw;
+    --giantfontsize: 104pt;
     
     font-family: 'Inter', sans-serif;
     font-size: var(--normalfontsize);
@@ -95,9 +96,51 @@ a, a:visited {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
+    text-align: center;
+}
 
+.landing div > *{
+    margin: 20px 0;
+}
+
+.landing div p {
+    padding: 0 5%;
+    font-size: var(--bigishfontsize);
+}
+
+.landing div i {
+    color: red;
+    font-weight: bold;
+}
+
+.landing div a{
+    display: block;
+    border: 5px solid white;
+    padding: 20px 40px;
+    border-radius: 5px;
+    
+    background-color: #000;
+    
     font-size: var(--bigfontsize);
-    font-weight: 600;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: calc(var(--bigfontsize) * 0.1);
+    text-transform: uppercase;
+    font-style: italic;
+
+    transition: border 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.landing div a:hover{
+    background-color: red;
+    border-color: red;
+    color: black;
+}
+
+.landing div h1 {
+    font-size: var(--bigfontsize);
 }
 
 ::selection {
