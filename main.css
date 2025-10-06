@@ -9,7 +9,7 @@ html, body {
 
     --normalfontsize: 14pt;
     --bigishfontsize: 1.67vw;
-    --bigfontsize: 2.78vw;
+    --bigfontsize: 2.5vw;
     --giantfontsize: 104pt;
     
     font-family: 'Inter', sans-serif;
@@ -102,7 +102,7 @@ a, a:visited {
 }
 
 .landing div > *{
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .landing div p {
@@ -129,8 +129,7 @@ a, a:visited {
     letter-spacing: calc(var(--bigfontsize) * 0.1);
     text-transform: uppercase;
     font-style: italic;
-
-    transition: border 0.2s, color 0.2s, background-color 0.2s;
+    /* transition: border 0.2s, color 0.2s, background-color 0.2s; */
 }
 
 .landing div a:hover{
@@ -152,3 +151,85 @@ a[target="_blank"]::after {
     content: url('../img/ext.png');
     margin: 0 3px 0 5px;   
 }
+
+/* Mobile + narrow screen */
+@media (max-width: 100vh) {
+
+
+    html, body {
+        --almostblack: #181818;
+        --bodycolour: #fff;
+        --dullpercent: 75%;
+        --bodydull: hsl(0, 0%, var(--dullpercent));
+        --header-margin: 20px;
+        --logo-size: 60px;
+        --body-margin: 5vh;
+
+        --normalfontsize: 2vh;
+        --bigishfontsize: 3vh;
+        --bigfontsize: 3vh;
+        --giantfontsize: 10vh;
+        
+        height: 100%;
+    }
+
+
+    .header {
+        position:relative;
+        padding: 0;
+        margin: 0;
+        background-color: var(--almostblack);
+        width: auto;
+        user-select: none;
+    }
+    .header .logo {
+        margin-left: var(--header-margin);
+    }
+
+    .landing {
+        flex-wrap: wrap;
+        height:auto;
+        width: 100%;
+        height: calc(100% - 80px);
+    }
+    
+    .landing p, .landing h1 {
+        background-color: black;
+        padding: var(--normalfontsize);
+    }
+    
+    .landing div > *{
+        margin: 2vh 0;
+    }
+    .landing .left {
+        justify-content: flex-end;
+    }
+    .landing .right {
+        justify-content: flex-start;
+    }
+    .landing .left, .landing .right {
+        flex-wrap: wrap;
+        flex:100%;
+    }
+    .landing .left::after {
+        content: " ";
+        display:block;
+        width:50vw;
+        height:0.5vh;
+        background-color: white;
+    }
+
+    /* content pages */
+    
+    .content {
+        margin-top: 0;
+        padding-left: var(--body-margin);
+        padding-right: var(--body-margin);
+    }
+
+    .content h1 {
+        font-size: var(--giantfontsize);
+        margin-bottom: 5vh;
+        user-select: none;
+    }
+}    
