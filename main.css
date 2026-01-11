@@ -16,10 +16,13 @@ html, body {
     font-size: var(--normalfontsize);
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: var(--bodycolour);
+    /* background-color: black; */
+    color: var(--bodycolour);    
+    overflow-x: hidden;
+}
 
-    
+html {
+    background-color: var(--almostblack);
 }
 
 a, a:visited {
@@ -45,6 +48,10 @@ p b {
     background-color: var(--almostblack);
     
     user-select: none;
+    
+    z-index: 1;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .header a:not(:first-child) {
@@ -61,6 +68,8 @@ p b {
     width: var(--logo-size);
 }
 
+.header .logolink { opacity: 1; }
+
 .header a, .header a:visited {
     color: var(--bodycolour);
     opacity: var(--dullpercent);
@@ -70,8 +79,13 @@ p b {
     transition: opacity 0.2s;
 }
 
-.header a:hover {
+.header a:hover, .header a#this {
     opacity: 1;
+}
+
+.header a#this {
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 .content {
@@ -83,7 +97,33 @@ p b {
 .content h1 {
     font-size: var(--giantfontsize);
     margin-bottom: 5vh;
+    margin-left: -2vh;
     user-select: none;
+    background-color: black;
+    padding: 2.2vh;
+    padding-right: 3vh;
+    width: fit-content;
+    overflow: hidden;
+}
+
+/* "glass" background shit */
+.content::before {
+    background-image: url('img/qlzoom340.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(50, 50, 50,.4);
+    background-blend-mode: lighten;
+    display:block;
+    position: absolute;
+    top:0;
+    left:-75px;
+    width: calc(100vw + 150px);
+    height: 40vh;
+    filter: blur(25px);
+    z-index: -1;
+
+    content: "";
 }
 
 .landing {
