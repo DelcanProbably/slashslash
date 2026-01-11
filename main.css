@@ -26,6 +26,11 @@ a, a:visited {
     color: var(--bodycolour);
 }
 
+p b {
+    color: red;
+    font-style: italic;
+}
+
 .header {
     position: fixed;
     display: flex;
