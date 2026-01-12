@@ -77,19 +77,43 @@ p b {
     font-weight: 600;
     font-size: var(--normalfontsize);
     transition: opacity 0.2s;
+    text-decoration: none;
+    text-underline-offset: 8px;
+}
+
+.header a::after {
+    content: "";
+    display:block;
+    top:8px;
+    width:0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.2s;
+}
+.header a.logolink::after {
+    display: none;
+}
+
+.header a:hover::after {
+    width: 100%;
 }
 
 .header a:hover, .header a#this {
     opacity: 1;
+    /* text-decoration: underline; */
 }
 
 .header a#this {
-    text-decoration: underline;
-    text-underline-offset: 8px;
+    color: red;
+}
+
+.header a#this::after {
+    width: 100%;
+    background-color: red;
 }
 
 .content {
-    margin-top: 30vh;
+    margin-top: 25vh;
     padding-left: var(--body-margin);
     padding-right: var(--body-margin);
 }
