@@ -122,6 +122,37 @@ p b {
     padding-right: var(--body-margin);
 }
 
+.content, .landing {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-iteration-count: 1;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(3vh);
+        filter: blur(1vh);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.doblur {
+    transition: filter 0.2s, margin-top 0.5s;
+    filter: blur(1vh);
+}
+
+.content.doblur {
+    margin-top: 28vh;
+}
+
 .content h1 {
     font-size: var(--giantfontsize);
     margin-bottom: 5vh;
@@ -135,7 +166,7 @@ p b {
 }
 
 /* "glass" background shit */
-.content::before {
+body:not(.landing-body)::before {
     background-image: url('img/qlzoom340.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,6 +183,10 @@ p b {
     z-index: -1;
 
     content: "";
+}
+
+body.landing-body {
+    background-color: #181818;
 }
 
 .landing {
